@@ -14,7 +14,7 @@ body {
 /* Header con logo y selector de idiomas */
 .header-content {
     display: flex;
-    flex-direction: column;  /* Cambiado para apilar los elementos (logo y banderas) */
+    flex-direction: column;  /* Apilar los elementos (logo y banderas) */
     justify-content: center; /* Centra el contenido */
     align-items: center;     /* Alinea verticalmente */
     width: 100%;
@@ -23,12 +23,12 @@ body {
 
 .language-selector {
     display: flex;
-    gap: 30px; /* Aumenta el espacio entre las banderas */
-    margin-top: 1px; /* Añade espacio entre las banderas y el logo */
+    gap: 15px; /* Aumenta el espacio entre las banderas */
+    margin-top: 10px; /* Añade espacio entre las banderas y el logo */
 }
 
 .language-selector img {
-    width: 40px;
+    width: 35px;
     height: auto;
     cursor: pointer;
 }
