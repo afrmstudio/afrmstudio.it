@@ -2,59 +2,57 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que el padding y border no afecten al tamaño total */
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+    background-color: #f4f7fa; /* Fondo suave para evitar distracciones */
+    color: #333; /* Color de texto oscuro para buena legibilidad */
+    line-height: 1.6; /* Mejorando la legibilidad */
 }
 
-/* Header con logo y selector de idiomas */
+/* Header */
 .header-content {
     display: flex;
-    flex-direction: column;  /* Apilar los elementos (logo y banderas) */
-    justify-content: center; /* Centra el contenido */
-    align-items: center;     /* Alinea verticalmente */
+    flex-direction: column;  /* Los elementos estarán en columna */
+    justify-content: center;
+    align-items: center; /* Centra los elementos */
     width: 100%;
     padding: 20px 0;
 }
 
+/* Logo */
+.logo {
+    width: 300px; /* Tamaño adecuado para pantallas grandes */
+    height: auto;
+}
+
+/* Selector de idiomas */
 .language-selector {
     display: flex;
-    gap: 15px; /* Aumenta el espacio entre las banderas */
-    margin-top: 10px; /* Añade espacio entre las banderas y el logo */
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .language-selector img {
     width: 35px;
     height: auto;
-    cursor: pointer;
+    cursor: pointer; /* Aparece como puntero */
 }
 
 .language-selector img:hover {
-    opacity: 0.7;
+    opacity: 0.7; /* Efecto hover para que el usuario sepa que puede hacer clic */
 }
 
-/* Logo en el Header */
-.logo {
-    width: 400px;  /* Tamaño por defecto para escritorio */
-    height: auto;
-}
-
-/* Sección principal */
+/* Contenedor principal */
 .main {
     padding: 60px 20px;
-    max-width: 1200px;
+    max-width: 1200px; /* Max-width para evitar que la página se expanda demasiado */
     margin: 0 auto;
 }
 
-.intro {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
+/* Contenedor de la imagen de perfil */
 .profile-img {
     border-radius: 50%;
     width: 150px;
@@ -63,37 +61,14 @@ body {
     margin-bottom: 20px;
 }
 
-.contact-info p {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 10px 0;
+/* Introducción */
+.intro {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Animación de texto en movimiento */
-.animated-text p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    animation: moveText 10s ease-in-out infinite;
-}
-
-/* Definición de la animación */
-@keyframes moveText {
-    0% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Sección de texto centrado antes del formulario de contacto */
 .text-center {
     text-align: center;
-    margin-bottom: 40px;  /* Espaciado hacia abajo */
 }
 
 .text-center h2 {
@@ -113,6 +88,12 @@ body {
     margin: 40px 0;
 }
 
+.services h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .services ul {
     list-style: none;
     padding-left: 0;
@@ -123,26 +104,14 @@ body {
     margin-bottom: 15px;
 }
 
-/* Efecto de desvanecimiento (Fade-in) al hacer scroll */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Formulario de contacto */
+/* Contact Form */
 .contact-form {
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
     padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* El formulario no se estira demasiado */
     margin-left: auto;
     margin-right: auto;
 }
@@ -153,7 +122,6 @@ body {
     color: #555;
     display: block;
     margin-bottom: 8px;
-    text-align: left;
 }
 
 .contact-form input,
@@ -163,24 +131,15 @@ body {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 1rem;
-    color: #333;
 }
 
 .contact-form button {
-    background-color: #007bff;
+    background-color: #007bff; /* Botón azul */
     color: #fff;
     border: none;
     padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s, transform 0.2s ease-in-out;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
 }
 
 /* Footer */
@@ -189,109 +148,74 @@ footer {
     padding: 20px;
     text-align: center;
     color: #555;
-    font-size: 0.9rem;
     margin-top: 40px;
 }
 
-/* Sección de redes sociales */
-.social-media {
-    text-align: center;
-    margin-top: 40px;
-}
+/* Media Queries para Responsividad */
 
-.social-media h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.social-media a {
-    margin: 0 10px;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
-/* Fondo parallax */
-.parallax {
-    background-image: url('img/background.jpg');
-    height: 100vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-/* Diseño responsivo */
+/* Para pantallas pequeñas como smartphones */
 @media (max-width: 768px) {
-    /* Reducción de la imagen de perfil */
+    /* El logo se ajusta para ser más pequeño */
+    .logo {
+        width: 150px;
+    }
+
+    /* La imagen de perfil también se ajusta */
     .profile-img {
         width: 120px;
         height: 120px;
     }
 
-    /* Ajustes de texto */
-    .intro p {
-        font-size: 1rem;
+    /* Ajustamos el tamaño de los títulos */
+    .text-center h2 {
+        font-size: 1.6rem;
     }
 
-    /* Ajuste del tamaño del formulario */
+    /* Hacemos que el formulario ocupe el 90% de la pantalla */
     .contact-form {
         padding: 20px;
+        width: 90%;
     }
 
-    /* Ajuste de los íconos sociales */
-    .social-icon {
-        width: 35px;
-        height: 35px;
+    /* Ajustamos el tamaño de los botones */
+    .contact-form button {
+        font-size: 0.9rem;
     }
 
-    /* Mejorar el espaciado y tamaño de textos */
-    .text-center h2 {
-        font-size: 1.8rem;
+    /* Las banderas del selector de idiomas se ajustan */
+    .language-selector img {
+        width: 25px;
     }
 
-    .text-center p {
-        font-size: 1rem;
+    /* Mejora la separación de los elementos en móviles */
+    .intro {
+        margin-bottom: 20px;
     }
 
+    .services {
+        margin-top: 20px;
+    }
+
+    /* Reducimos el tamaño de la lista de servicios en móviles */
     .services li {
         font-size: 1rem;
     }
 
-    .services-title {
-        font-size: 1.5rem;
-    }
-
-    .contact-info p {
-        font-size: 1rem;
+    /* Hacemos que el texto del pie de página sea más pequeño */
+    footer p {
+        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 480px) {
-    /* Ajuste aún más para pantallas muy pequeñas */
-    .intro {
-        padding: 10px;
+/* Para pantallas más grandes, como tabletas y dispositivos mayores */
+@media (min-width: 769px) {
+    .header-content {
+        flex-direction: column; /* Los elementos estarán en columna */
+        justify-content: center; /* Los centra */
+        align-items: center;
     }
 
-    .contact-form {
-        width: 90%;
-    }
-
-    .social-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    /* Reducción aún más del logo */
-    .logo {
-        width: 120px; /* Reducir tamaño del logo en dispositivos móviles */
+    .language-selector {
+        margin-top: 10px; /* Espaciado entre las banderas */
     }
 }

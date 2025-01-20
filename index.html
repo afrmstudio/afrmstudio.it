@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos de la página, como la codificación y la descripción para SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFRM Studio ofrece servicios de diseño web personalizado, landing pages optimizadas, SEO, marketing digital y creación de logos para ayudarte a destacar online y aumentar tus ventas.">
+    <meta name="keywords" content="diseño web personalizado, landing pages optimizadas, SEO, marketing digital, branding, creación de logos, diseño web para empresas, diseño de landing pages, marketing digital, SEO para negocios">
+    <meta name="author" content="Alex Reyna">
     <title>AFRM Studio</title>
+    <!-- Enlazamos el archivo de estilo CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Icono de la página -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
+        <!-- Contenedor principal del header, donde se ubica el logo y el selector de idiomas -->
         <div class="header-content">
+            <!-- Logo de la empresa -->
             <img src="img/logo.png" alt="AFRM Studio Logo" class="logo">
-            <!-- Contenedor de las banderas debajo del logo -->
+            <!-- Selector de idiomas con las banderas -->
             <div class="language-selector">
                 <a href="#" onclick="setLanguage('es')"><img src="img/flags/es.png" alt="Español"></a>
                 <a href="#" onclick="setLanguage('en')"><img src="img/flags/en.png" alt="English"></a>
@@ -23,20 +31,36 @@
 
     <section class="main">
         <div class="intro">
+            <!-- Foto de perfil -->
             <img src="img/photo.jpg" alt="Your Photo" class="profile-img">
-            <p id="greeting">Hola, soy Alex Reyna, la mente creativa detrás de AFRM Studio...</p>
-            <p id="services">Ofrecemos una variedad de servicios para ayudarte a construir tu presencia online...</p>
+            <!-- Introducción personal -->
+            <p id="greeting">¡Hola! Soy Alex Reyna, parte del equipo de AFRM Studio.</p>
+            <p id="services">Nos apasiona ayudar a emprendedores y empresas a crear una presencia online auténtica y efectiva. En AFRM Studio, ofrecemos una gama de servicios diseñados para ayudarte a destacar en el mundo digital, desde diseño web personalizado hasta estrategias de branding que realmente conectan con tu audiencia.</p>
         </div>
 
         <div class="animated-text">
+            <!-- Texto animado en movimiento -->
             <p id="animated-text">Te ayudamos a crear experiencias online memorables.</p>
         </div>
 
-        <!-- Sección de texto centrado antes del formulario de contacto -->
         <section class="text-center">
+            <!-- Título y descripción de la sección de servicios -->
             <h2 id="services-title">Nuestros Servicios</h2>
-            <p id="services-description">En AFRM Studio, ofrecemos una gama de servicios...</p>
-            <p id="contact-info">Si quieres crear algo único e impactante...</p>
+            <p id="services-description">En AFRM Studio, ofrecemos una gama de servicios para ayudarte a crear una presencia online atractiva y funcional.</p>
+            <p id="contact-info">Si quieres crear algo único e impactante, ¡estás en el lugar correcto!</p>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section class="services">
+            <h3 id="what-we-do">¿Qué hacemos por ti?</h3>
+            <ul>
+                <!-- Lista de los servicios ofrecidos -->
+                <li id="service-web-design"><strong>Diseño Web Personalizado</strong>: Creamos sitios web adaptados a tu estilo y necesidades, asegurando una experiencia visual y funcional impecable.</li>
+                <li id="service-landing-pages"><strong>Landing Pages Optimizada para Conversiones</strong>: Diseño de **landing pages** que no solo atraen visitantes, sino que convierten. ¡Potencia tus ventas!</li>
+                <li id="service-seo-marketing"><strong>SEO y Marketing Digital</strong>: Mejoramos tu visibilidad en los motores de búsqueda y te ayudamos a atraer más clientes a tu negocio.</li>
+                <li id="service-branding-consulting"><strong>Consultoría en Branding y Estrategia Digital</strong>: Desarrollamos tu marca online con un enfoque estratégico que te posiciona como líder en tu industria.</li>
+                <li id="service-logo-creation"><strong>Creación de Logos y Branding</strong>: Creamos logos personalizados que capturan la esencia de tu marca, asegurando una identidad visual coherente y única.</li>
+            </ul>
         </section>
 
         <!-- Formulario de contacto -->
@@ -54,8 +78,9 @@
         </form>
     </section>
 
+    <!-- Pie de página -->
     <footer>
-        
+        <p>&copy; 2025 AFRM Studio | Todos los derechos reservados.</p>
         <div class="social-media">
             <h3 id="follow-us">Síguenos</h3>
             <a href="https://www.facebook.com/yourprofile" target="_blank">
@@ -77,10 +102,9 @@
                 <img src="img/social/whatsapp.png" alt="whatsapp" class="social-icon">
             </a>
         </div>
-        <br><br>
-        <p>&copy; 2025 AFRM Studio | Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/languages.js"></script>
     <script src="js/script.js"></script>
 </body>
