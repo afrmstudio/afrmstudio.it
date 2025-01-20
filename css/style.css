@@ -14,17 +14,17 @@ body {
 /* Header con logo y selector de idiomas */
 .header-content {
     display: flex;
-    justify-content: center; /* Centra el logo */
+    flex-direction: column;  /* Cambiado para apilar los elementos (logo y banderas) */
+    justify-content: center; /* Centra el contenido */
     align-items: center;     /* Alinea verticalmente */
     width: 100%;
     padding: 20px 0;
 }
 
 .language-selector {
-    position: absolute;
-    right: 10px; /* Para que las banderas estén a la derecha */
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Aumenta el espacio entre las banderas */
+    margin-top: 15px; /* Añade espacio entre las banderas y el logo */
 }
 
 .language-selector img {
