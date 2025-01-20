@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFRM Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="img/logo.png" alt="AFRM Studio Logo" class="logo">
+            <div class="language-selector">
+                <a href="#" onclick="setLanguage('es')"><img src="img/flags/es.png" alt="Español"></a>
+                <a href="#" onclick="setLanguage('en')"><img src="img/flags/en.png" alt="English"></a>
+                <a href="#" onclick="setLanguage('it')"><img src="img/flags/it.png" alt="Italiano"></a>
+                <a href="#" onclick="setLanguage('de')"><img src="img/flags/de.png" alt="Deutsch"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="intro">
+            <img src="img/photo.jpg" alt="Your Photo" class="profile-img">
+            <p id="greeting">Hola, soy Alex Reyna, la mente creativa detrás de AFRM Studio...</p>
+            <p id="services">Ofrecemos una variedad de servicios para ayudarte a construir tu presencia online...</p>
+        </div>
+
+        <div class="animated-text">
+            <p id="animated-text">Te ayudamos a crear experiencias online memorables.</p>
+        </div>
+
+        <!-- Sección de texto centrado antes del formulario de contacto -->
+        <section class="text-center">
+            <h2 id="services-title">Nuestros Servicios</h2>
+            <p id="services-description">En AFRM Studio, ofrecemos una gama de servicios...</p>
+            <p id="contact-info">Si quieres crear algo único e impactante...</p>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <form class="contact-form" action="https://airform.io/info@afrmstudio.it" method="POST">
+            <label for="name" id="label-name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email" id="label-email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message" id="label-message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" id="button-submit">Enviar mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AFRM Studio | Todos los derechos reservados.</p>
+        <div class="social-media">
+            <h3 id="follow-us">Síguenos</h3>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">
+                <img src="img/social/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">
+                <img src="img/social/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                <img src="img/social/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank">
+                <img src="img/social/twitter.png" alt="Twitter" class="social-icon">
+            </a>
+            <a href="mailto:info@afrmstudio.it" target="_blank">
+                <img src="img/social/email.png" alt="email" class="social-icon">
+            </a>
+            <a href="https://wa.link/a71w1f" target="_blank">
+                <img src="img/social/whatsapp.png" alt="whatsapp" class="social-icon">
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
