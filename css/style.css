@@ -225,21 +225,62 @@ footer {
 
 /* Diseño responsivo */
 @media (max-width: 768px) {
+    /* Reducción de la imagen de perfil */
     .profile-img {
         width: 120px;
         height: 120px;
     }
 
+    /* Ajustes de texto */
     .intro p {
         font-size: 1rem;
     }
 
+    /* Ajuste del tamaño del formulario */
     .contact-form {
         padding: 20px;
     }
 
+    /* Ajuste de los íconos sociales */
     .social-icon {
         width: 35px;
         height: 35px;
+    }
+
+    /* Mejorar el espaciado y tamaño de textos */
+    .text-center h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-center p {
+        font-size: 1rem;
+    }
+
+    .services li {
+        font-size: 1rem;
+    }
+
+    .services-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste aún más para pantallas muy pequeñas */
+    .intro {
+        padding: 10px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
     }
 }
