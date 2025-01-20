@@ -37,6 +37,12 @@ body {
     opacity: 0.7;
 }
 
+/* Logo en el Header */
+.logo {
+    width: 400px;  /* Tamaño por defecto para escritorio */
+    height: auto;
+}
+
 /* Sección principal */
 .main {
     padding: 60px 20px;
@@ -282,5 +288,10 @@ footer {
     .social-icon {
         width: 30px;
         height: 30px;
+    }
+
+    /* Reducción aún más del logo */
+    .logo {
+        width: 120px; /* Reducir tamaño del logo en dispositivos móviles */
     }
 }
