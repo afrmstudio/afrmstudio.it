@@ -23,12 +23,12 @@ body {
 
 .language-selector {
     display: flex;
-    gap: 15px; /* Aumenta el espacio entre las banderas */
-    margin-top: 15px; /* Añade espacio entre las banderas y el logo */
+    gap: 30px; /* Aumenta el espacio entre las banderas */
+    margin-top: 1px; /* Añade espacio entre las banderas y el logo */
 }
 
 .language-selector img {
-    width: 30px;
+    width: 40px;
     height: auto;
     cursor: pointer;
 }
