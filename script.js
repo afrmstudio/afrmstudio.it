@@ -259,41 +259,80 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialLanguage = savedLanguage || 'it';
     changeLanguage(initialLanguage);
     
-    // Validazione form contatto
-    const contactForm = document.getElementById('contact-form');
+    // Gestione del form di contatto
+    const contactForm = document.querySelector('form[action*="formsubmit.co"]');
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Mostriamo un'indicazione visiva che il form è stato inviato
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
             
-            // Basic validation
-            let isValid = true;
-            const requiredFields = contactForm.querySelectorAll('[required]');
+            // Cambia il testo del pulsante e lo disabilita
+            submitButton.innerHTML = '<span class="animate-pulse">Invio in corso...</span>';
+            submitButton.disabled = true;
+            submitButton.style.cursor = 'wait';
             
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                } else {
-                    field.classList.remove('border-red-500');
+            // Aggiungi una classe di opacità al form per indicare l'elaborazione
+            this.style.opacity = '0.7';
+            this.style.pointerEvents = 'none';
+            
+            // Crea e mostra un overlay di caricamento
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.style.position = 'fixed';
+            loadingOverlay.style.top = '0';
+            loadingOverlay.style.left = '0';
+            loadingOverlay.style.width = '100%';
+            loadingOverlay.style.height = '100%';
+            loadingOverlay.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+            loadingOverlay.style.display = 'flex';
+            loadingOverlay.style.justifyContent = 'center';
+            loadingOverlay.style.alignItems = 'center';
+            loadingOverlay.style.zIndex = '9999';
+            
+            // Aggiungi un messaggio di caricamento
+            const loadingMessage = document.createElement('div');
+            loadingMessage.innerHTML = `
+                <div style="text-align: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div style="border: 4px solid #f3f3f3; border-top: 4px solid black; border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 20px; animation: spin 2s linear infinite;"></div>
+                    <p style="margin: 0; font-weight: bold;">Invio del messaggio in corso...</p>
+                    <p style="margin: 10px 0 0; font-size: 14px; color: #666;">Attendi il completamento dell'operazione.</p>
+                </div>
+            `;
+            loadingOverlay.appendChild(loadingMessage);
+            
+            // Aggiungi lo stile dell'animazione
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
                 }
-            });
-            
-            // Email validation
-            const emailField = contactForm.querySelector('input[type="email"]');
-            if (emailField && emailField.value) {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(emailField.value)) {
-                    isValid = false;
-                    emailField.classList.add('border-red-500');
+                .animate-pulse {
+                    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
                 }
-            }
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: .5; }
+                }
+            `;
+            document.head.appendChild(style);
             
-            if (isValid) {
-                // Here you would typically send the form data to a server
-                // For now, let's just show a success message
-                alert('Grazie per il tuo messaggio! Ti risponderò al più presto.');
-                contactForm.reset();
-            }
+            document.body.appendChild(loadingOverlay);
+            
+            // Se dopo 15 secondi non abbiamo ancora avuto un redirect, ripristina il form
+            // Questo è un fallback nel caso in cui il form non venga inviato correttamente
+            setTimeout(function() {
+                if (document.body.contains(submitButton) && document.body.contains(loadingOverlay)) {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.cursor = 'pointer';
+                    contactForm.style.opacity = '1';
+                    contactForm.style.pointerEvents = 'auto';
+                    document.body.removeChild(loadingOverlay);
+                    alert('L\'invio sta impiegando più tempo del previsto. Riprova o contattaci direttamente via email o WhatsApp.');
+                }
+            }, 15000);
         });
     }
     
