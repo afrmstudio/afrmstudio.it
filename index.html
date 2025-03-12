@@ -224,15 +224,14 @@
                 <div class="max-w-xl mx-auto text-center">
                     <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 reveal" data-lang-key="contact-title">Contatta AFRM Studio per il tuo progetto</h2>
                     <p class="text-gray-600 mb-6 sm:mb-8 reveal" data-lang-key="contact-subtitle">Richiedi una consulenza gratuita. AFRM Studio risponderà entro 24 ore per discutere le tue esigenze e come possiamo aiutarti a raggiungere i tuoi obiettivi digitali.</p>
-                    <form action="https://formsubmit.co/505c8223a6f6bb295da50a819ce5e2dc" method="POST" class="space-y-4" id="contact-form">
+                    
+                    <form action="https://formsubmit.co/505c8223a6f6bb295da50a819ce5e2dc" method="POST">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input
                                 type="text"
                                 placeholder="Nome"
                                 name="name"
                                 required
-                                data-lang-key="contact-name" 
-                                data-lang-attr="placeholder"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
                             >
                             <input
@@ -240,8 +239,6 @@
                                 placeholder="Email"
                                 name="email"
                                 required
-                                data-lang-key="contact-email"
-                                data-lang-attr="placeholder"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
                             >
                         </div>
@@ -249,63 +246,56 @@
                             type="text"
                             placeholder="Oggetto"
                             name="subject"
-                            data-lang-key="contact-subject"
-                            data-lang-attr="placeholder"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black mt-4"
                         >
                         <textarea
                             placeholder="Messaggio"
                             name="message"
                             required
-                            data-lang-key="contact-message"
-                            data-lang-attr="placeholder"
                             rows="4"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black mt-4"
                         ></textarea>
                         
                         <!-- Campi nascosti per configurare FormSubmit -->
                         <input type="hidden" name="_subject" value="Nuovo messaggio dal sito AFRM Studio">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="grazie.html">
+                        <input type="hidden" name="_next" value="https://afrmstudio.github.io/AFRMStudio/grazie.html">
                         <input type="hidden" name="_captcha" value="false">
                         
-                        <div class="space-y-4">
-                            <button
-                                type="submit"
-                                class="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm"
-                                data-lang-key="contact-send"
-                            >
-                                Invia messaggio a AFRM Studio
-                            </button>
-                            <div class="text-gray-600 text-sm">
-                                <span data-lang-key="contact-or">O contatta AFRM Studio direttamente:</span>
-                                <div class="flex flex-wrap justify-center gap-3 mt-4">
-                                    <a 
-                                        href="https://wa.link/a71w1f"
-                                        target="_blank"
-                                        rel="noopener noreferrer" 
-                                        class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
-                                    >
-                                        WhatsApp →
-                                    </a>
-                                    <a 
-                                        href="mailto:info@afrmstudio.it"
-                                        class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
-                                        data-lang-key="contact-email-btn"
-                                    >
-                                        Email
-                                    </a>
-                                    <a 
-                                        href="tel:+34642374570"
-                                        class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
-                                        data-lang-key="contact-call"
-                                    >
-                                        Chiama
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <button
+                            type="submit"
+                            class="w-full py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm mt-4"
+                        >
+                            Invia messaggio a AFRM Studio
+                        </button>
                     </form>
+                    
+                    <div class="text-gray-600 text-sm mt-6">
+                        <span data-lang-key="contact-or">O contatta AFRM Studio direttamente:</span>
+                        <div class="flex flex-wrap justify-center gap-3 mt-4">
+                            <a 
+                                href="https://wa.link/a71w1f"
+                                target="_blank"
+                                rel="noopener noreferrer" 
+                                class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
+                            >
+                                WhatsApp →
+                            </a>
+                            <a 
+                                href="mailto:info@afrmstudio.it"
+                                class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
+                                data-lang-key="contact-email-btn"
+                            >
+                                Email
+                            </a>
+                            <a 
+                                href="tel:+34642374570"
+                                class="px-4 py-3 border border-gray-300 text-gray-800 rounded-full hover:bg-gray-100 transition-colors text-sm contact-link"
+                                data-lang-key="contact-call"
+                            >
+                                Chiama
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -343,6 +333,7 @@
             </div>
             <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
                 <p>&copy; 2025 AFRM Studio | <span data-lang-key="footer-rights">Tutti i diritti riservati.</span></p>
+                <p class="mt-2">AFRM Studio - Alex</p>
             </div>
         </div>
     </footer>
